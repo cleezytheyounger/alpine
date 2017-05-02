@@ -1,3 +1,102 @@
 body{
   font-family: 'Dosis', sans-serif;
+  padding-top: 50px;
+}
+
+/* Navigation custom formatting */
+.navbar-brand{
+  height: 100px;
+}
+.navbar-brand>img{
+  height: 100%;
+  width: auto;
+  float: left;
+}
+
+.navbar-header>button{
+  margin: 33px 15px 33px 0px;
+}
+#alpine-nav>ul>li>a{
+  font-size: 15px;
+  color: #143D35;
+}
+#alpine-nav>ul>li:hover{
+  background-color: #143D35;
+}
+#alpine-nav>ul>li>a:hover{
+  color: white;
+}
+
+/* formatting calendar */
+.ui-datepicker{
+  position: relative;
+  z-index: 10000 !important;
+}
+.ui-datepicker .ui-datepicker-header{
+  border: none;
+  background: #143D35;
+}
+
+
+/* formatting navbar */
+.navbar{
+  margin: 0;
+  border: 0;
+}
+#alpine-nav>form>ul>li>label{
+  margin: 0px 0px 0px 5px;
+}
+#alpine-nav>form>ul>li>input{
+  margin: 5px 0px;
+}
+#reservation-bar>li{
+  display: inline-block;
+}
+#reservation-bar>li>input{
+  width: 85px;
+}
+/*
+#reservation-bar>li:nth-child(3)>input{
+  width: 15px;
+}
+#reservation-bar>li:nth-child(4)>input{
+  width: 15px;
+}
+#reservation-bar>li:nth-child(5)>input{
+  width: 50px;
+}
+#reservation-bar>li:nth-child(6)>input{
+  width: 50px;
+}
+*/
+#reservation-bar>li:nth-child(n+3)>input{
+  width:50px
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 85vh;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 85vh;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  /*
+  height: 500px;
+  */
 }

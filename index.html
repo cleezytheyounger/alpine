@@ -4,12 +4,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
   <title>Alpine Inn</title>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alpine-nav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="alpine-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://reservation.asiwebres.com/v2/RoomAvailability.aspx?id=2a726d64243a47309d441468b8b77350">Reservation</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="#">Amenities</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Anaheim Convention Center</a></li>
+              <li><a href="#">Disneyland & California Adventure</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Promotions</a></li>
+          <li><a href="#">Contact</a></li>
+
+        </ul>
+        <form class="navbar-form" name="form1" method="post" onsubmit="return checkdate(this.txtcheckindate,this.txtcheckoutdate);" action="https://reservation.asiwebres.com/v2/RoomAvailability.aspx?id=2a726d64243a47309d441468b8b77350&Operation=Date">
+          <ul id="reservation-bar" class="nav navbar-nav navbar-right">
+            <li>
+              <label for="txtcheckindate">Checkin: </label>
+              <input type="text" value="MM/DD/YYYY" name="txtcheckindate" id="txtcheckindate" onfocus="this.value=''" onblur="if(this.value=='') this.value='MM/DD/YYYY';" onchange="javascript:SetCheckOutDate();">
+            </li>
+            <li>
+              <label for="txtcheckoutdate">Checkout: </label>
+              <input type="text" value="MM/DD/YYYY" name="txtcheckoutdate" id="txtcheckoutdate" onfocus="this.value=''" onblur="if(this.value=='') this.value='MM/DD/YYYY';">
+            </li>
+            <li>
+              <label for="txtadult">Adults: </label>
+              <input type="text" id="txtadult" name="txtadult" value="1">
+            </li>
+            <li>
+              <label for="txtChildren">Children: </label>
+              <input type="text" id="txtChildren" name="txtChildren" value="0">
+            </li>
+            <li>
+              <label for="txtPromocode">Promotion: </label>
+              <input type="text" id="txtPromocode" name="txtPromocode">
+            </li>
+            <li>
+              <label for=""></label>
+              <input type="submit" name="btnGo" value="BOOK">
+            </li>
+          </ul>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active" style="background: url(images/reception.jpg) no-repeat top center; background-size: cover;">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Alpine Inn</h1>
+            <p class="lead">Our Inn, Your Memories</p>
+            <a class="btn btn-large btn-primary" href="#">See Rooms</a>
+          </div>
+        </div>
+      </div>
+      <div class="item" style="background: url(images/disney-tickets.jpg) no-repeat center center; background-size: cover;">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Alpine Inn</h1>
+            <p class="lead">Steps away from Anaheim Convention Center, and walking distance to Disney Theme Parks</p>
+            <a class="btn btn-large btn-primary" href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="item" style="background: url(images/pool.jpg) no-repeat left center; background-size: cover;">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Alpine Inn</h1>
+            <p class="lead">For work or play, Alpine's premier location and comfortable amenities will ensure your pleasant stay</p>
+            <a class="btn btn-large btn-primary" href="https://reservation.asiwebres.com/v2/RoomAvailability.aspx?id=2a726d64243a47309d441468b8b77350">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- /.carousel -->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+  <script src="http://reservation.asiwebres.com/v2/app_themes/default/js/DateValidation.js"
+      type="text/javascript"></script>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/blitzer/jquery-ui.css"
+      type="text/css" media="all" />
+  <script type="text/javascript">
+      $(document).ready(function () {
+          SetDatePicker();
+      });
+
+      function SetDatePicker() {
+          $("#txtcheckindate").datepicker({ minDate: 0, showAnim: 'slideDown' });
+          $("#txtcheckoutdate").datepicker({ minDate: 0, showAnim: 'slideDown' });
+      }
+  </script>
 
 </body>
 </html>
